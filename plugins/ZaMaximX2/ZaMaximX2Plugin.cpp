@@ -288,8 +288,6 @@ void ZaMaximX2Plugin::run(const float** inputs, float** outputs, uint32_t frames
 
 		if (xmax[1] < emaxn[1][pose[1]]) {
 			a = 1000 / (release * srate);
-		} else {
-			a = 1. - exp(log((alpha-1.) / (alpha)) / (N + 1.));
 		}
 		emax[1] = a*xmax[1] + (1. - a)*emaxn[1][pose[1]];
 		eavg[1] = avgall(&emaxn[1][0]);
